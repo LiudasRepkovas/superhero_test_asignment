@@ -3,6 +3,8 @@
 This is a simple project that allows you to observe a list of superheroes and add new ones. The project is built with
 NestJS and uses a simple in-memory database to store the data.
 
+**I've left a bunch of todos in the code to address imperfections and possible improvements.**
+
 ## Project setup
 
 ```bash
