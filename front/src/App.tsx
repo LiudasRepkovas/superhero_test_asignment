@@ -14,10 +14,12 @@ function App() {
     };
 
     useEffect(() => {
-        if(createResult.isSuccess) alert('Superhero created!'); return;
-        if(createResult.isError) {
-            if('data' in createResult.error)
-                alert((createResult.error.data as ApiError).message[0]);
+        if (createResult.isSuccess) {
+            alert('Superhero created!');
+            return;
+        }
+        if(createResult.isError && ('data' in createResult.error)) {
+            alert((createResult.error.data as ApiError).message[0]);
         }
 
     }, [createResult]);

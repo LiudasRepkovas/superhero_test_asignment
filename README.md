@@ -41,6 +41,7 @@ $ npm dev
 - Add more features to the project like updating and deleting superheroes.
 - Add OpenAPI documentation to the project.
 - Implement response formatting using class-validator to ensure that we are sending as little data as possible to the client.
+- Add translation engine to the project to support multiple languages.
 
 ## If I had more time, I would:
 - Add all the features mentioned above.
@@ -51,6 +52,5 @@ $ npm dev
 - Would create a docker-compose file to run the project and its dependencies in a containerized environment.
 - Would add a CI/CD pipeline to the project to automate the deployment process.
 - Would add a logger to the project to log all the requests and responses for easier future debugging.
-- Add translation engine to the project to support multiple languages.
 - Add a caching layer to the project to reduce the number of requests to the database.
 - Would make frontend prettier and more user-friendly. 
