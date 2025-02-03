@@ -6,34 +6,41 @@ This repository contains a simple project that allows you to observe a list of s
 
 ### Project setup
 
-Navigate to the api directory and install the dependencies with the following command:
+Navigate to the api directory with the following command:
 ```bash
-$ cd api && npm install
+$ cd api
 ```
+
+Install the dependencies with the following command:
+```bash
+$ npm install
+```
+
 After installing the dependencies, you can run the project with the following command:
 
 ```bash
-# development
 $ npm run start:dev
 ```
 
-### Running tests
+### Running unit tests
 ```bash
-# unit tests
 $ npm run test
 ```
 
 ## Frontend
 
-Navigate to the front directory and install the dependencies with the following command:
+Navigate to the front directory:
 ```bash
-$ cd front && npm install
+$ cd front
+```
+Install the dependencies with the following command:
+```bash
+$ npm install
 ```
 After installing the dependencies, you can run the project with the following command:
 
 ```bash
-# development
-$ npm dev
+$ npm run dev
 ```
 
 ## Things that could have been done by my team:
