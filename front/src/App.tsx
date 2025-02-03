@@ -1,4 +1,4 @@
-import {useGetListQuery} from "./feature/superhero/superhero.ts";
+import {useGetListQuery} from "./feature/superhero/SuperheroApi.ts";
 import {SuperheroForm} from "./feature/superhero/SuperheroForm.tsx";
 import {SuperheroCard} from "./feature/superhero/SuperheroCard.tsx";
 

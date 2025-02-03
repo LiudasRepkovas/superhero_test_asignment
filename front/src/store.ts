@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit'
-import {superheroApi} from "./feature/superhero/superhero.ts";
+import {superheroApi} from "./feature/superhero/SuperheroApi.ts";
 
 export const store = configureStore({
     reducer: {

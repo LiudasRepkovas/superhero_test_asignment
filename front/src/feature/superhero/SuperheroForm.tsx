@@ -1,7 +1,7 @@
 import {Box, Button, TextField} from "@mui/material";
 import {ApiError, CreateSuperheroDto} from "./types.ts";
 import {useEffect, useState} from "react";
-import {useCreateMutation} from "./superhero.ts";
+import {useCreateMutation} from "./SuperheroApi.ts";
 
 interface SuperheroFormProps {}
 
