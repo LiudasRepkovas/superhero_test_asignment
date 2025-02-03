@@ -1,0 +1,1 @@
+export const SPECIAL_OK_STRING = "OK";
