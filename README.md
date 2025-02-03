@@ -44,7 +44,7 @@ $ npm dev
 - Add translation engine to the project to support multiple languages.
 
 ## If I had more time, I would:
-- Add all the features mentioned above.
+- Cover API in e2e tests.
 - Would ask for more details about the requirements and reasons behind them.
 - Would ask for end vision of this app to be able to choose the suitable technologies and architecture.
 - Add image upload functionality to the project.

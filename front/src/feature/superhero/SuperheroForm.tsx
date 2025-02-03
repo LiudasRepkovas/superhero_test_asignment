@@ -1,26 +1,37 @@
 import {Box, Button, TextField} from "@mui/material";
-import {CreateSuperheroDto} from "./types.ts";
-import {useState} from "react";
+import {ApiError, CreateSuperheroDto} from "./types.ts";
+import {useEffect, useState} from "react";
+import {useCreateMutation} from "./superhero.ts";
 
-interface SuperheroFormProps {
-    onSubmit?: (newSuperhero: CreateSuperheroDto) => Promise<void>;
-}
+interface SuperheroFormProps {}
 
-export const SuperheroForm: React.FC<SuperheroFormProps> = ({ onSubmit }) => {
+export const SuperheroForm: React.FC<SuperheroFormProps> = () => {
     const [name, setName] = useState('');
     const [superpower, setSuperpower] = useState('');
-    const [humility, setHumility] = useState(0);
+    const [humility, setHumility] = useState('1');
+    const [create, createResult] = useCreateMutation();
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        const newSuperhero: CreateSuperheroDto = { name, superpower, humility };
-        if (onSubmit) {
-            await onSubmit(newSuperhero);
-        }
-        setName('');
-        setSuperpower('');
-        setHumility(0);
+        const newSuperhero: CreateSuperheroDto = { name, superpower, humility: +humility };
+
+        await create(newSuperhero);
+
     };
+
+    useEffect(() => {
+        if (createResult.isSuccess) {
+            alert('Superhero created!');
+            setName('');
+            setSuperpower('');
+            setHumility('1');
+            return;
+        }
+        if(createResult.isError && ('data' in createResult.error)) {
+            alert((createResult.error.data as ApiError).message[0]);
+        }
+
+    }, [createResult]);
 
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -39,7 +50,8 @@ export const SuperheroForm: React.FC<SuperheroFormProps> = ({ onSubmit }) => {
             <TextField
                 label="Humility"
                 value={humility}
-                onChange={(e) => setHumility(+e.target.value)}
+                type="number"
+                onChange={(e) => setHumility(e.target.value)}
                 required
             />
             <Button sx={{
